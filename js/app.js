@@ -37,19 +37,21 @@ console.log(addClassData3);
 
 var data = document.getElementsByTagName('section').length;
 for(var i=0; i<data; i++){
-     data2 =document.getElementsByTagName('section')[i].id;
+    var data3 =i+1;
+    console.log(data3);
     var createLi = document.createElement('li');
+    console.log(document.getElementsByTagName('section'));
     console.log(createLi);
     createA=document.createElement('a');
-    createA.setAttribute('id',data2.toString());
-    createA.href= `#${data2.toString()}`
+   createA.setAttribute('id',data3.toString());
+    createA.href= `#section${data3.toString()}`
     createA.setAttribute('class','menu__link');
-    createA.innerText=data2;
+    createA.innerText='Section '+data3.toString();
     createLi.appendChild(createA);
     var navbarUl = document.getElementById('navbar__list');
     navbarUl.appendChild(createLi);
     console.log(navbarUl);
-    document.getElementById('section1').classList.add('scroll__link');
+    document.getElementById('1').classList.add('scroll__link');
 }
 console.log(document.getElementsByTagName('section'));
 
@@ -57,57 +59,29 @@ console.log(document.getElementsByTagName('section'));
 window.addEventListener('scroll',function(){
     y  = window.scrollY;
      if( y>=0 && y<900){
-     document.getElementById('section1').classList.add('scroll__link');
-     document.getElementById('section2').classList.remove('scroll__link');
-     document.getElementById('section3').classList.remove('scroll__link');
+     document.getElementById('1').classList.add('scroll__link');
+     document.getElementById('2').classList.remove('scroll__link');
+     document.getElementById('3').classList.remove('scroll__link');
       addClassData2.classList.remove('your-active-class');
      addClassData3.classList.remove('your-active-class');
  }else if(y>= 900 && y <1300){
       addClassData2.classList.add('your-active-class');
      addClassData3.classList.remove('your-active-class');
-     document.getElementById('section2').classList.add('scroll__link');
-     document.getElementById('section1').classList.remove('scroll__link');
-     document.getElementById('section3').classList.remove('scroll__link');
+     document.getElementById('2').classList.add('scroll__link');
+     document.getElementById('1').classList.remove('scroll__link');
+     document.getElementById('3').classList.remove('scroll__link');
      addClassData1.classList.remove('your-active-class');
  }else{
      addClassData1.classList.remove('your-active-class');
-     document.getElementById('section3').classList.add('scroll__link');
-     document.getElementById('section1').classList.remove('scroll__link');
-     document.getElementById('section2').classList.remove('scroll__link');
+     document.getElementById('3').classList.add('scroll__link');
+     document.getElementById('1').classList.remove('scroll__link');
+     document.getElementById('2').classList.remove('scroll__link');
      addClassData2.classList.remove('your-active-class');
      addClassData3.classList.add('your-active-class');
  }
  
   console.log(Math.round(y));
  })
-
-function smoothScroll(target,duration){
-    var target = document.getElementById(target);
-    var targetPosition = target.getBoundingClientRect().top;
-    var startposition =window.pageYOffset;
-    var distance = targetPosition-startposition;
-    var startTime= null;
-    function animation(currentTime){
-        if(startTime ===null)startTime =currentTime;
-        var timeElapsed = currentTime-startTime;
-        var run =ease(timeElapsed,startposition,distance,duration);
-        window.scrollTo(0,run);
-        if(timeElapsed <duration) requestAnimationFrame(animation)
-    }
-    function ease(t, b, c, d) {
-        return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
-    };
-    requestAnimationFrame(animation);
-    
-}
-
- var section1 = document.getElementById('section1');
- 
- addClassData1.addEventListener('click',function(){
-     smoothScroll('section1',1000);
-     console.log('vikash');
- })
-
 
 
 /**
