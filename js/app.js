@@ -51,7 +51,7 @@ window.addEventListener("scroll", function () {
     document.getElementById("5").classList.add("scroll__link");
     addClassData5.classList.add("your-active-class");
   }
-  console.log(y);
+  //console.log(y);
 });
 
 
@@ -78,8 +78,9 @@ function removeClassElements(){
   for(let i=0; i<dataNavbar.length; i++){
     let data = `section${i+1}`;
     // console.log(data);
-    // console.log(document.getElementById(data));
-    if(document.getElementById(data.toString()).classList.contains('your-active-class')){
+    let check= document.getElementById(data.toString()).classList.contains('your-active-class');
+    console.log(check);
+    if(check){
       document.getElementById(data.toString()).classList.remove('your-active-class')
     }
     if(dataNavbar[i].classList.contains("scroll__link"))
