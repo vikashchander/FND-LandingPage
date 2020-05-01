@@ -31,23 +31,23 @@ for (var i = 0; i < data; i++) {
 window.addEventListener("scroll", function () {
   let y = Math.round(window.scrollY);
   if (y <=850 ) {
-    removeClassElements();
+    onScroll();
     document.getElementById("1").classList.add("scroll__link");
     addClassData1.classList.add("your-active-class");
   } else if (y <= 1380) {
-    removeClassElements();
+    onScroll();
     document.getElementById("2").classList.add("scroll__link");
     addClassData2.classList.add("your-active-class");
   } else if(y <= 2100){
-    removeClassElements();
+    onScroll();
     document.getElementById("3").classList.add("scroll__link");
     addClassData3.classList.add("your-active-class");
   } else if(y <= 2900){
-    removeClassElements();
+    onScroll();
     document.getElementById("4").classList.add("scroll__link");
     addClassData4.classList.add("your-active-class");
   }else{
-    removeClassElements();
+    onScroll();
     document.getElementById("5").classList.add("scroll__link");
     addClassData5.classList.add("your-active-class");
   }
@@ -70,7 +70,7 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-function removeClassElements(){
+function onScroll(){
   let dataNavbar =document.getElementsByTagName('a');
   let dataSections = document.getElementsByTagName('section');
   //console.log(dataSections);
