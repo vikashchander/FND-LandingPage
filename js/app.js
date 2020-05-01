@@ -78,10 +78,12 @@ function removeClassElements(){
   for(let i=0; i<dataNavbar.length; i++){
     let data = `section${i+1}`;
     // console.log(data);
-    let check= document.getElementById(data.toString()).classList.value;
+    let check= document.getElementById(data.toString()).getAttribute('class','your-active-class');
     console.log(check);
     if(check){
       document.getElementById(data.toString()).className=' ';
+    }else{
+      console.log('this return null value')
     }
     if(dataNavbar[i].classList.contains("scroll__link"))
        dataNavbar[i].classList.remove("scroll__link")
