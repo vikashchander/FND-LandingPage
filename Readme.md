@@ -2,7 +2,7 @@
 
 ## Check This App
 
-## NOTE that this project run perfectly on firefox developer edition but not in chrome broswer
+## NOTE that this project run perfectly on firefox developer edition but not in chrome browser
 You can check this app at :[Landing Page Project](https://dazzling-babbage-177b2d.netlify.app/)
 
 ## Check This Website Rubrics 
